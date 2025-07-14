@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuliner Nusantara - Makanan Tradisional Indonesia</title>
-    
-    <!-- Tailwind CSS -->
+    <title>Kerupuk Kemplang Pak Harun - Renyah & Gurih</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#FF6B35',
-                        secondary: '#2EC4B6'
+                        primary: '#f59e0b',
+                        secondary: '#dc2626'
                     },
                     borderRadius: {
                         'none': '0px',
@@ -31,775 +34,515 @@
             }
         }
     </script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Remix Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-    
-    <!-- Custom CSS -->
     <style>
-        :where([class^="ri-"])::before { content: "\f3c2"; }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
         }
         
         .glass {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
         
         .glass-dark {
-            background: rgba(0, 0, 0, 0.15);
+            background: rgba(0, 0, 0, 0.25);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
         
-        .glass-card {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
+        .hero-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=Traditional%20Indonesian%20kerupuk%20kemplang%20crackers%20golden%20crispy%20texture%20arranged%20beautifully%20on%20wooden%20table%20with%20warm%20lighting%20and%20blurred%20background%2C%20food%20photography%20style%2C%20appetizing%20presentation&width=1920&height=1080&seq=hero1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        
-        .menu-slider {
+        html {
             scroll-behavior: smooth;
         }
         
-        .menu-slider::-webkit-scrollbar {
-            display: none;
+        .nav-link {
+            transition: all 0.3s ease;
         }
         
-        .video-container:hover .play-button {
-            transform: scale(1.1);
-            background-color: rgba(255, 107, 53, 0.9);
+        .nav-link:hover {
+            color: #f59e0b;
+            transform: translateY(-2px);
         }
         
-        .custom-checkbox {
-            appearance: none;
-            -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            border: 2px solid #FF6B35;
-            outline: none;
-            cursor: pointer;
-            position: relative;
-            background-color: transparent;
+        .btn-primary {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            transition: all 0.3s ease;
         }
         
-        .custom-checkbox:checked {
-            background-color: #FF6B35;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
         }
         
-        .custom-checkbox:checked::after {
-            content: '';
-            position: absolute;
-            top: 3px;
-            left: 6px;
-            width: 5px;
-            height: 10px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
+        .card-hover {
+            transition: all 0.3s ease;
         }
         
-        .custom-range {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 6px;
-            border-radius: 5px;
-            background: #e0e0e0;
-            outline: none;
-        }
-        
-        .custom-range::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #FF6B35;
-            cursor: pointer;
-            border: 2px solid white;
-            box-shadow: 0 0 5px rgba(0,0,0,0.2);
-        }
-        
-        .custom-range::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #FF6B35;
-            cursor: pointer;
-            border: 2px solid white;
-            box-shadow: 0 0 5px rgba(0,0,0,0.2);
-        }
-        
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 24px;
-        }
-        
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 24px;
-        }
-        
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 3px;
-            bottom: 3px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        
-        input:checked + .slider {
-            background-color: #FF6B35;
-        }
-        
-        input:checked + .slider:before {
-            transform: translateX(26px);
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 w-full z-50 glass px-6 py-4">
-        <div class="container mx-auto flex items-center justify-between">
-            <a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
-            
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="text-gray-800 hover:text-primary font-medium transition-colors">Beranda</a>
-                <a href="#menu" class="text-gray-800 hover:text-primary font-medium transition-colors">Menu</a>
-                <a href="#about" class="text-gray-800 hover:text-primary font-medium transition-colors">Tentang Kami</a>
+<body class="bg-gradient-to-br from-orange-50 to-yellow-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass" data-aos="fade-down">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="font-['Pacifico'] text-2xl text-primary">Pak Harun</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-800 font-medium">Home</a>
+                        <a href="#tentang" class="nav-link text-gray-800 font-medium">Tentang Kami</a>
+                        <a href="#harga" class="nav-link text-gray-800 font-medium">Harga</a>
+                        <a href="#kontak" class="nav-link text-gray-800 font-medium">Kontak</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="w-8 h-8 flex items-center justify-center text-gray-800">
+                        <i class="ri-menu-line ri-lg"></i>
+                    </button>
+                </div>
             </div>
-            
-            <button class="glass-card px-6 py-2 text-primary font-semibold rounded-button hover:bg-primary hover:text-white transition-all whitespace-nowrap">
-                Pesan Sekarang
-            </button>
-            
-            <div class="md:hidden w-10 h-10 flex items-center justify-center">
-                <i class="ri-menu-line text-2xl text-gray-800"></i>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden glass">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-800 font-medium nav-link">Home</a>
+                <a href="#tentang" class="block px-3 py-2 text-gray-800 font-medium nav-link">Tentang Kami</a>
+                <a href="#harga" class="block px-3 py-2 text-gray-800 font-medium nav-link">Harga</a>
+                <a href="#kontak" class="block px-3 py-2 text-gray-800 font-medium nav-link">Kontak</a>
             </div>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center pt-20" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20Indonesian%20food%20spread%20on%20a%20wooden%20table%2C%20featuring%20nasi%20goreng%2C%20rendang%2C%20sate%2C%20gado-gado%2C%20and%20other%20authentic%20dishes.%20The%20scene%20is%20beautifully%20lit%20with%20warm%20natural%20light%20coming%20from%20the%20side%2C%20creating%20a%20cozy%20and%20inviting%20atmosphere.%20The%20background%20shows%20a%20traditional%20Indonesian%20restaurant%20interior%20with%20subtle%20wooden%20elements%20and%20plants.%20The%20food%20looks%20incredibly%20appetizing%20and%20is%20arranged%20in%20an%20aesthetically%20pleasing%20manner.&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-2xl text-white">
-                <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">Rasakan Kelezatan Kuliner Nusantara</h1>
-                <p class="text-xl mb-8">Nikmati perpaduan rempah dan cita rasa autentik Indonesia yang telah diwariskan dari generasi ke generasi.</p>
+    <section id="home" class="hero-bg min-h-screen flex items-center relative">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Kerupuk Kemplang<br>
+                    <span class="text-primary">Pak Harun</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+                    Nikmati kelezatan kerupuk kemplang tradisional yang renyah dan gurih, dibuat dengan resep turun temurun
+                </p>
+                <button onclick="pesanSekarang()" class="btn-primary text-white px-8 py-4 !rounded-button text-lg font-semibold whitespace-nowrap">
+                    <i class="ri-whatsapp-line mr-2"></i>
+                    Pesan Sekarang
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tentang Kami</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Warisan kuliner tradisional yang telah dipercaya selama puluhan tahun
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="https://readdy.ai/api/search-image?query=Indonesian%20elderly%20man%20cooking%20traditional%20kerupuk%20kemplang%20in%20traditional%20kitchen%20setting%2C%20warm%20lighting%2C%20authentic%20cooking%20process%2C%20cultural%20heritage%20atmosphere&width=600&height=400&seq=about1&orientation=landscape" 
+                         alt="Pak Harun sedang memasak" class="w-full h-96 object-cover rounded-2xl shadow-lg">
+                </div>
                 
-                <div class="flex flex-wrap gap-4">
-                    <button class="bg-primary text-white px-8 py-3 rounded-button font-semibold hover:bg-primary/90 transition-all whitespace-nowrap">
-                        Jelajahi Menu
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Tradisi Keluarga Sejak 1985</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Pak Harun memulai usaha kerupuk kemplang dari dapur rumahnya dengan resep warisan nenek moyang. Dengan dedikasi dan kualitas terbaik, kini kerupuk kemplang Pak Harun telah menjadi favorit di seluruh Palembang.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Setiap kerupuk dibuat dengan bahan-bahan pilihan dan proses tradisional yang menjaga cita rasa autentik. Kami bangga menyajikan kerupuk kemplang yang renyah, gurih, dan penuh dengan cinta.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-award-line text-primary ri-2x"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900">40+ Tahun</h4>
+                            <p class="text-sm text-gray-600">Pengalaman</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="ri-heart-line text-primary ri-2x"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900">100%</h4>
+                            <p class="text-sm text-gray-600">Halal & Alami</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Preview -->
+    <section class="py-20 bg-gradient-to-r from-orange-50 to-yellow-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-up">
+                Lihat Proses Pembuatan
+            </h2>
+            <p class="text-lg text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="100">
+                Saksikan bagaimana kerupuk kemplang dibuat dengan penuh perhatian dan keahlian
+            </p>
+            
+            <div class="relative glass rounded-2xl p-8" data-aos="zoom-in" data-aos-delay="200">
+                <div class="aspect-video bg-gray-200 rounded-xl relative overflow-hidden">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Indonesian%20kerupuk%20kemplang%20production%20process%20in%20kitchen%2C%20cooking%20preparation%2C%20authentic%20food%20making%2C%20documentary%20style%20photography&width=800&height=450&seq=video1&orientation=landscape" 
+                         alt="Video Preview" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <button class="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="ri-play-fill text-primary ri-2x ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-4">
+                    "Setiap kerupuk dibuat dengan hati dan pengalaman puluhan tahun"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Harga -->
+    <section id="harga" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Daftar Harga</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Pilih paket yang sesuai dengan kebutuhan Anda
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Paket Kecil -->
+                <div class="glass rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://readdy.ai/api/search-image?query=Small%20package%20of%20Indonesian%20kerupuk%20kemplang%20crackers%20in%20clear%20plastic%20bag%2C%20product%20photography%2C%20clean%20white%20background%2C%20appetizing%20golden%20color&width=300&height=200&seq=pack1&orientation=landscape" 
+                         alt="Paket Kecil" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Paket Kecil</h3>
+                    <p class="text-gray-600 mb-4">250 gram kerupuk kemplang segar</p>
+                    <div class="text-3xl font-bold text-primary mb-6">Rp 25.000</div>
+                    <button onclick="pesanProduk('Paket Kecil', '25000')" class="w-full btn-primary text-white py-3 !rounded-button font-semibold whitespace-nowrap">
+                        <i class="ri-shopping-cart-line mr-2"></i>
+                        Pesan Sekarang
                     </button>
-                    <button class="glass-dark text-white px-8 py-3 rounded-button font-semibold hover:bg-white/20 transition-all whitespace-nowrap">
-                        Tentang Kami
+                </div>
+                
+                <!-- Paket Sedang -->
+                <div class="glass rounded-2xl p-8 card-hover border-2 border-primary" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold inline-block mb-4">
+                        TERLARIS
+                    </div>
+                    <img src="https://readdy.ai/api/search-image?query=Medium%20package%20of%20Indonesian%20kerupuk%20kemplang%20crackers%20in%20attractive%20packaging%2C%20product%20photography%2C%20clean%20white%20background%2C%20premium%20presentation&width=300&height=200&seq=pack2&orientation=landscape" 
+                         alt="Paket Sedang" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Paket Sedang</h3>
+                    <p class="text-gray-600 mb-4">500 gram kerupuk kemplang segar</p>
+                    <div class="text-3xl font-bold text-primary mb-6">Rp 45.000</div>
+                    <button onclick="pesanProduk('Paket Sedang', '45000')" class="w-full btn-primary text-white py-3 !rounded-button font-semibold whitespace-nowrap">
+                        <i class="ri-shopping-cart-line mr-2"></i>
+                        Pesan Sekarang
+                    </button>
+                </div>
+                
+                <!-- Paket Besar -->
+                <div class="glass rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://readdy.ai/api/search-image?query=Large%20family%20package%20of%20Indonesian%20kerupuk%20kemplang%20crackers%20in%20big%20container%2C%20product%20photography%2C%20clean%20white%20background%2C%20value%20pack%20presentation&width=300&height=200&seq=pack3&orientation=landscape" 
+                         alt="Paket Besar" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Paket Besar</h3>
+                    <p class="text-gray-600 mb-4">1 kg kerupuk kemplang segar</p>
+                    <div class="text-3xl font-bold text-primary mb-6">Rp 80.000</div>
+                    <button onclick="pesanProduk('Paket Besar', '80000')" class="w-full btn-primary text-white py-3 !rounded-button font-semibold whitespace-nowrap">
+                        <i class="ri-shopping-cart-line mr-2"></i>
+                        Pesan Sekarang
                     </button>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-white">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tentang Kami</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Kuliner Nusantara hadir untuk memberikan pengalaman kuliner Indonesia yang autentik dan tak terlupakan.</p>
-            </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://readdy.ai/api/search-image?query=A%20warm%20and%20inviting%20traditional%20Indonesian%20restaurant%20interior%20with%20modern%20touches.%20The%20space%20features%20wooden%20furniture%2C%20warm%20lighting%2C%20and%20traditional%20decorative%20elements%20like%20batik%20patterns%20and%20carved%20wooden%20panels.%20The%20atmosphere%20is%20cozy%20and%20elegant%2C%20with%20tables%20beautifully%20set%20and%20ready%20for%20dining.%20Natural%20light%20streams%20in%20through%20large%20windows%2C%20highlighting%20the%20restaurants%20contemporary%20yet%20cultural%20aesthetic.&width=600&height=400&seq=11&orientation=landscape" alt="Restaurant Interior" class="rounded-lg shadow-lg w-full">
-                </div>
-                
-                <div class="space-y-6">
-                    <div class="glass-card rounded-lg p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold mb-6">Informasi Restoran</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
-                                    <i class="ri-map-pin-line"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Alamat</h4>
-                                    <p class="text-gray-600">Jl. Gatot Subroto No. 123, Jakarta Selatan, DKI Jakarta 12930</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
-                                    <i class="ri-time-line"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Jam Operasional</h4>
-                                    <p class="text-gray-600">Senin - Minggu: 10:00 - 22:00 WIB</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
-                                    <i class="ri-phone-line"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800">Reservasi & Pemesanan</h4>
-                                    <p class="text-gray-600">Silakan hubungi kami melalui WhatsApp untuk pemesanan dan informasi lebih lanjut</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex space-x-4 pt-4">
-                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-instagram-line"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-facebook-line"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-twitter-x-line"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+                <p class="text-gray-600 mb-6">
+                    <i class="ri-truck-line mr-2"></i>
+                    Gratis ongkir untuk pembelian minimal Rp 100.000 di area Palembang
+                </p>
             </div>
         </div>
     </section>
-    
-    <!-- Special Offers Section -->
-    <section id="offers" class="py-20 px-6 bg-white">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Penawaran Spesial</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Nikmati penawaran spesial kami untuk makanan favorit Anda dengan harga terbaik. Penawaran terbatas, jangan sampai terlewatkan!</p>
-            </div>
+
+    <!-- Section Pesan Sekarang -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-aos="fade-up">
+                Pesan Sekarang Juga!
+            </h2>
+            <p class="text-xl text-white mb-12" data-aos="fade-up" data-aos-delay="100">
+                Jangan sampai kehabisan! Kerupuk kemplang segar menanti Anda
+            </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Offer 1 -->
-                <div class="glass-card rounded-lg overflow-hidden shadow-lg">
-                    <div class="relative">
-                        <img src="https://readdy.ai/api/search-image?query=A%20beautifully%20plated%20Nasi%20Goreng%20%28Indonesian%20fried%20rice%29%20with%20a%20perfectly%20fried%20egg%20on%20top%2C%20garnished%20with%20fresh%20vegetables%2C%20crispy%20shallots%2C%20and%20accompanied%20by%20prawn%20crackers.%20The%20dish%20is%20served%20on%20a%20modern%20ceramic%20plate%20against%20a%20clean%2C%20minimalist%20background%20that%20highlights%20the%20vibrant%20colors%20of%20the%20food.%20The%20lighting%20is%20bright%20and%20even%2C%20creating%20an%20appetizing%20presentation%20that%20showcases%20the%20texture%20and%20details%20of%20this%20iconic%20Indonesian%20dish.&width=600&height=400&seq=2&orientation=landscape" alt="Nasi Goreng Spesial" class="w-full h-64 object-cover object-top">
-                        <div class="absolute top-4 right-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full">
-                            Hemat 25%
+            <div class="glass-dark rounded-2xl p-8" data-aos="zoom-in" data-aos-delay="200">
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="text-center text-white">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-time-line ri-2x"></i>
                         </div>
+                        <h4 class="font-semibold mb-2">Proses Cepat</h4>
+                        <p class="text-sm opacity-90">Pesanan diproses dalam 1-2 jam</p>
                     </div>
-                    
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Nasi Goreng Spesial</h3>
-                        <p class="text-gray-600 mb-4">Nasi goreng dengan telur mata sapi, ayam suwir, udang, dan sayuran segar.</p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-gray-400 line-through mr-2">Rp 65.000</span>
-                                <span class="text-primary font-bold text-xl">Rp 48.750</span>
-                            </div>
-                            <button class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                <i class="ri-shopping-cart-line"></i>
-                            </button>
+                    <div class="text-center text-white">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-shield-check-line ri-2x"></i>
                         </div>
+                        <h4 class="font-semibold mb-2">Kualitas Terjamin</h4>
+                        <p class="text-sm opacity-90">100% segar dan berkualitas</p>
+                    </div>
+                    <div class="text-center text-white">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-customer-service-2-line ri-2x"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Pelayanan 24/7</h4>
+                        <p class="text-sm opacity-90">Siap melayani kapan saja</p>
                     </div>
                 </div>
                 
-                <!-- Offer 2 -->
-                <div class="glass-card rounded-lg overflow-hidden shadow-lg">
-                    <div class="relative">
-                        <img src="https://readdy.ai/api/search-image?query=A%20stunning%20presentation%20of%20Rendang%2C%20the%20iconic%20Indonesian%20beef%20curry%2C%20showing%20tender%20chunks%20of%20beef%20in%20rich%2C%20dark%20brown%20sauce%20with%20visible%20spices.%20The%20dish%20is%20served%20in%20an%20elegant%20black%20ceramic%20bowl%20on%20a%20wooden%20surface%2C%20with%20fresh%20herbs%20as%20garnish.%20The%20lighting%20creates%20beautiful%20highlights%20on%20the%20sauce%2C%20emphasizing%20its%20glossy%20texture.%20The%20background%20is%20clean%20and%20minimal%2C%20allowing%20the%20deep%20colors%20and%20textures%20of%20this%20slow-cooked%20delicacy%20to%20be%20the%20focal%20point%20of%20the%20image.&width=600&height=400&seq=3&orientation=landscape" alt="Rendang Sapi" class="w-full h-64 object-cover object-top">
-                        <div class="absolute top-4 right-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full">
-                            Hemat 20%
-                        </div>
-                    </div>
-                    
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Rendang Sapi</h3>
-                        <p class="text-gray-600 mb-4">Daging sapi yang dimasak dengan rempah-rempah khas Padang hingga empuk.</p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-gray-400 line-through mr-2">Rp 85.000</span>
-                                <span class="text-primary font-bold text-xl">Rp 68.000</span>
-                            </div>
-                            <button class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                <i class="ri-shopping-cart-line"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Offer 3 -->
-                <div class="glass-card rounded-lg overflow-hidden shadow-lg">
-                    <div class="relative">
-                        <img src="https://readdy.ai/api/search-image?query=A%20mouthwatering%20display%20of%20Indonesian%20Sate%20Ayam%20%28chicken%20satay%29%20-%20several%20skewers%20of%20perfectly%20grilled%2C%20slightly%20charred%20chicken%20pieces%20arranged%20on%20a%20modern%20plate.%20The%20satay%20is%20accompanied%20by%20a%20bowl%20of%20rich%20peanut%20sauce%2C%20sliced%20cucumbers%2C%20and%20red%20onions.%20A%20small%20portion%20of%20ketupat%20%28rice%20cake%29%20is%20visible%20on%20the%20side.%20The%20image%20is%20shot%20from%20a%20top-down%20perspective%20with%20soft%2C%20natural%20lighting%20that%20highlights%20the%20caramelization%20on%20the%20meat%20and%20the%20creamy%20texture%20of%20the%20sauce.%20The%20background%20is%20clean%20and%20minimal%2C%20focusing%20attention%20on%20the%20food.&width=600&height=400&seq=4&orientation=landscape" alt="Sate Ayam" class="w-full h-64 object-cover object-top">
-                        <div class="absolute top-4 right-4 bg-primary text-white text-sm font-bold px-3 py-1 rounded-full">
-                            Hemat 30%
-                        </div>
-                    </div>
-                    
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Sate Ayam</h3>
-                        <p class="text-gray-600 mb-4">Sate ayam dengan bumbu kacang khas Indonesia dan lontong.</p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-gray-400 line-through mr-2">Rp 55.000</span>
-                                <span class="text-primary font-bold text-xl">Rp 38.500</span>
-                            </div>
-                            <button class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                <i class="ri-shopping-cart-line"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <button class="px-8 py-3 border-2 border-primary text-primary font-semibold rounded-button hover:bg-primary hover:text-white transition-all whitespace-nowrap">
-                    Lihat Semua Penawaran
+                <button onclick="pesanSekarang()" class="bg-white text-primary px-12 py-4 !rounded-button text-lg font-semibold hover:scale-105 transition-transform whitespace-nowrap">
+                    <i class="ri-whatsapp-line mr-2"></i>
+                    Chat WhatsApp Sekarang
                 </button>
             </div>
         </div>
     </section>
-    
-    <!-- Video Preview Section -->
-    <section class="py-20 px-6 bg-gray-50">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Lihat Bagaimana Kami Menyiapkan Makanan</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Saksikan proses pembuatan makanan kami yang dibuat dengan bahan-bahan segar dan resep tradisional.</p>
+
+    <!-- Kontak -->
+    <section id="kontak" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Hubungi Kami</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Kami siap melayani pesanan dan pertanyaan Anda
+                </p>
             </div>
             
-            <div class="max-w-4xl mx-auto">
-                <div class="video-container relative rounded-xl overflow-hidden shadow-xl">
-                    <img src="https://readdy.ai/api/search-image?query=A%20behind-the-scenes%20view%20of%20a%20traditional%20Indonesian%20kitchen%20with%20chefs%20preparing%20authentic%20dishes.%20The%20scene%20shows%20multiple%20chefs%20in%20white%20uniforms%20and%20traditional%20headwear%20working%20at%20different%20stations.%20One%20chef%20is%20stir-frying%20nasi%20goreng%20in%20a%20large%20wok%20with%20dramatic%20flames%2C%20while%20another%20is%20grilling%20sate%20skewers%20over%20charcoal.%20Fresh%20ingredients%20are%20beautifully%20arranged%20on%20wooden%20cutting%20boards.%20The%20kitchen%20has%20both%20modern%20equipment%20and%20traditional%20cooking%20tools.%20The%20lighting%20is%20warm%20and%20creates%20a%20dynamic%2C%20energetic%20atmosphere%20that%20captures%20the%20passion%20of%20Indonesian%20culinary%20arts.&width=1200&height=675&seq=5&orientation=landscape" alt="Video Preview" class="w-full h-auto">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="play-button w-20 h-20 flex items-center justify-center bg-primary/80 text-white rounded-full transition-all cursor-pointer">
-                            <i class="ri-play-fill text-3xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-center text-gray-600 mt-6">Lihat bagaimana koki kami menyiapkan hidangan Rendang Sapi yang autentik dengan rempah-rempah pilihan.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Menu Highlights Section -->
-    <section id="menu" class="py-20 px-6 bg-white">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Menu Unggulan Kami</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Jelajahi berbagai pilihan menu unggulan kami yang dibuat dengan resep tradisional dan bahan-bahan berkualitas tinggi.</p>
-            </div>
-            
-            <div class="relative">
-                <div class="menu-slider flex overflow-x-auto gap-6 pb-8">
-                    <!-- Menu Item 1 -->
-                    <div class="glass-card rounded-lg overflow-hidden shadow-lg min-w-[300px] max-w-[300px]">
-                        <img src="https://readdy.ai/api/search-image?query=A%20beautifully%20presented%20plate%20of%20Gado-gado%2C%20the%20Indonesian%20vegetable%20salad%20with%20peanut%20sauce.%20The%20dish%20features%20a%20colorful%20array%20of%20blanched%20vegetables%20including%20cabbage%2C%20bean%20sprouts%2C%20long%20beans%2C%20and%20carrots%2C%20topped%20with%20sliced%20boiled%20eggs%2C%20fried%20tofu%2C%20and%20tempeh.%20The%20vegetables%20are%20arranged%20artistically%20and%20drizzled%20with%20rich%2C%20creamy%20peanut%20sauce.%20Prawn%20crackers%20are%20placed%20on%20the%20side.%20The%20dish%20is%20served%20on%20a%20traditional%20ceramic%20plate%20against%20a%20clean%20background%20with%20soft%2C%20natural%20lighting%20that%20enhances%20the%20fresh%20colors%20of%20the%20ingredients.&width=400&height=300&seq=6&orientation=landscape" alt="Gado-gado" class="w-full h-48 object-cover object-top">
-                        
-                        <div class="p-6">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-lg font-bold">Gado-gado</h3>
-                                <div class="flex">
-                                    <i class="ri-star-fill text-yellow-400"></i>
-                                    <span class="ml-1 text-gray-700">4.8</span>
-                                </div>
-                            </div>
-                            
-                            <p class="text-gray-600 text-sm mb-4">Sayuran segar dengan bumbu kacang khas Indonesia.</p>
-                            
-                            <div class="flex justify-between items-center">
-                                <span class="text-primary font-bold">Rp 45.000</span>
-                                <button class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-add-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Menu Item 2 -->
-                    <div class="glass-card rounded-lg overflow-hidden shadow-lg min-w-[300px] max-w-[300px]">
-                        <img src="https://readdy.ai/api/search-image?query=A%20stunning%20presentation%20of%20Soto%20Ayam%2C%20Indonesian%20chicken%20soup.%20The%20clear%2C%20aromatic%20broth%20is%20filled%20with%20shredded%20chicken%2C%20glass%20noodles%2C%20and%20bean%20sprouts%2C%20garnished%20with%20crispy%20fried%20shallots%2C%20chopped%20green%20onions%2C%20and%20a%20sprinkle%20of%20fresh%20herbs.%20A%20wedge%20of%20lime%20sits%20on%20the%20edge%20of%20the%20bowl.%20The%20soup%20is%20served%20in%20a%20beautiful%20ceramic%20bowl%20on%20a%20wooden%20table%2C%20with%20condiments%20like%20sambal%20and%20emping%20crackers%20visible%20on%20the%20side.%20The%20lighting%20is%20bright%20and%20natural%2C%20highlighting%20the%20golden%20color%20of%20the%20broth%20and%20the%20fresh%20ingredients.&width=400&height=300&seq=7&orientation=landscape" alt="Soto Ayam" class="w-full h-48 object-cover object-top">
-                        
-                        <div class="p-6">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-lg font-bold">Soto Ayam</h3>
-                                <div class="flex">
-                                    <i class="ri-star-fill text-yellow-400"></i>
-                                    <span class="ml-1 text-gray-700">4.7</span>
-                                </div>
-                            </div>
-                            
-                            <p class="text-gray-600 text-sm mb-4">Sup ayam dengan kuah kuning dan rempah-rempah.</p>
-                            
-                            <div class="flex justify-between items-center">
-                                <span class="text-primary font-bold">Rp 50.000</span>
-                                <button class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-add-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Menu Item 3 -->
-                    <div class="glass-card rounded-lg overflow-hidden shadow-lg min-w-[300px] max-w-[300px]">
-                        <img src="https://readdy.ai/api/search-image?query=A%20beautiful%20image%20of%20Nasi%20Padang%2C%20a%20famous%20Indonesian%20meal%20consisting%20of%20steamed%20rice%20served%20with%20various%20dishes.%20The%20presentation%20shows%20a%20central%20mound%20of%20white%20rice%20surrounded%20by%20small%20portions%20of%20different%20dishes%20including%20rendang%20%28beef%20curry%29%2C%20gulai%20ayam%20%28chicken%20curry%29%2C%20boiled%20egg%20in%20spicy%20sauce%2C%20fried%20fish%2C%20and%20various%20vegetable%20dishes.%20The%20food%20is%20arranged%20on%20a%20traditional%20plate%20with%20vibrant%20colors%20from%20the%20different%20curries%20and%20sauces.%20The%20lighting%20is%20warm%20and%20highlights%20the%20rich%20textures%20and%20colors%20of%20this%20diverse%20meal.&width=400&height=300&seq=8&orientation=landscape" alt="Nasi Padang" class="w-full h-48 object-cover object-top">
-                        
-                        <div class="p-6">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-lg font-bold">Nasi Padang</h3>
-                                <div class="flex">
-                                    <i class="ri-star-fill text-yellow-400"></i>
-                                    <span class="ml-1 text-gray-700">4.9</span>
-                                </div>
-                            </div>
-                            
-                            <p class="text-gray-600 text-sm mb-4">Nasi dengan berbagai lauk khas Padang.</p>
-                            
-                            <div class="flex justify-between items-center">
-                                <span class="text-primary font-bold">Rp 65.000</span>
-                                <button class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-add-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Menu Item 4 -->
-                    <div class="glass-card rounded-lg overflow-hidden shadow-lg min-w-[300px] max-w-[300px]">
-                        <img src="https://readdy.ai/api/search-image?query=A%20close-up%20view%20of%20Bakso%2C%20Indonesian%20meatball%20soup.%20The%20bowl%20contains%20several%20large%2C%20perfectly%20round%20beef%20meatballs%20floating%20in%20a%20clear%2C%20steaming%20broth%20alongside%20yellow%20noodles%2C%20glass%20noodles%2C%20bok%20choy%2C%20and%20bean%20sprouts.%20The%20dish%20is%20garnished%20with%20fried%20shallots%2C%20chopped%20green%20onions%2C%20and%20a%20sprinkle%20of%20white%20pepper.%20A%20small%20dish%20of%20sambal%20%28chili%20sauce%29%20is%20visible%20on%20the%20side.%20The%20soup%20is%20served%20in%20a%20white%20ceramic%20bowl%20on%20a%20wooden%20table%2C%20with%20steam%20rising%20from%20the%20hot%20broth%2C%20captured%20in%20beautiful%20natural%20lighting%20that%20highlights%20the%20textures%20of%20the%20meatballs%20and%20the%20clarity%20of%20the%20broth.&width=400&height=300&seq=9&orientation=landscape" alt="Bakso" class="w-full h-48 object-cover object-top">
-                        
-                        <div class="p-6">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-lg font-bold">Bakso</h3>
-                                <div class="flex">
-                                    <i class="ri-star-fill text-yellow-400"></i>
-                                    <span class="ml-1 text-gray-700">4.6</span>
-                                </div>
-                            </div>
-                            
-                            <p class="text-gray-600 text-sm mb-4">Sup bakso daging sapi dengan mie dan sayuran.</p>
-                            
-                            <div class="flex justify-between items-center">
-                                <span class="text-primary font-bold">Rp 40.000</span>
-                                <button class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-add-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Menu Item 5 -->
-                    <div class="glass-card rounded-lg overflow-hidden shadow-lg min-w-[300px] max-w-[300px]">
-                        <img src="https://readdy.ai/api/search-image?query=A%20beautifully%20plated%20serving%20of%20Martabak%20Manis%2C%20the%20sweet%20Indonesian%20folded%20pancake.%20The%20thick%2C%20fluffy%20pancake%20is%20cut%20into%20squares%2C%20revealing%20layers%20of%20chocolate%2C%20cheese%2C%20crushed%20peanuts%2C%20and%20condensed%20milk%20fillings.%20The%20top%20is%20golden%20brown%20and%20slightly%20crispy%2C%20while%20the%20inside%20looks%20soft%20and%20moist.%20The%20dish%20is%20served%20on%20a%20decorative%20plate%20with%20a%20dusting%20of%20powdered%20sugar%20on%20top.%20The%20lighting%20is%20warm%20and%20highlights%20the%20different%20textures%20and%20glistening%20toppings%20of%20this%20popular%20Indonesian%20dessert.&width=400&height=300&seq=10&orientation=landscape" alt="Martabak Manis" class="w-full h-48 object-cover object-top">
-                        
-                        <div class="p-6">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-lg font-bold">Martabak Manis</h3>
-                                <div class="flex">
-                                    <i class="ri-star-fill text-yellow-400"></i>
-                                    <span class="ml-1 text-gray-700">4.8</span>
-                                </div>
-                            </div>
-                            
-                            <p class="text-gray-600 text-sm mb-4">Kue tebal dengan berbagai topping manis.</p>
-                            
-                            <div class="flex justify-between items-center">
-                                <span class="text-primary font-bold">Rp 55.000</span>
-                                <button class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-add-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slider Controls -->
-                <button class="absolute top-1/2 left-0 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-lg z-10 text-primary hover:bg-primary hover:text-white transition-all focus:outline-none" id="prev-slide">
-                    <i class="ri-arrow-left-s-line text-xl"></i>
-                </button>
-                <button class="absolute top-1/2 right-0 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-lg z-10 text-primary hover:bg-primary hover:text-white transition-all focus:outline-none" id="next-slide">
-                    <i class="ri-arrow-right-s-line text-xl"></i>
-                </button>
-            </div>
-            
-            <div class="text-center mt-12">
-                <button class="px-8 py-3 bg-primary text-white font-semibold rounded-button hover:bg-primary/90 transition-all whitespace-nowrap">
-                    Lihat Menu Lengkap
-                </button>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Location Section -->
-    <section class="py-20 px-6 bg-gray-50">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Lokasi & Informasi</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Kunjungi kami dan nikmati pengalaman bersantap yang tak terlupakan.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <div class="glass-card rounded-lg p-8 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-6">Informasi Restoran</h3>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Informasi Kontak</h3>
                     
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
-                                <i class="ri-map-pin-line"></i>
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-phone-line text-primary ri-lg"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-800">Alamat</h4>
-                                <p class="text-gray-600">Jl. Gatot Subroto No. 123, Jakarta Selatan, DKI Jakarta 12930</p>
+                                <h4 class="font-semibold text-gray-900 mb-1">Telepon</h4>
+                                <p class="text-gray-600">+62 812-3456-7890</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
-                                <i class="ri-time-line"></i>
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-whatsapp-line text-primary ri-lg"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-800">Jam Operasional</h4>
-                                <p class="text-gray-600">Senin - Minggu: 10:00 - 22:00 WIB</p>
+                                <h4 class="font-semibold text-gray-900 mb-1">WhatsApp</h4>
+                                <p class="text-gray-600">+62 812-3456-7890</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4">
-                                <i class="ri-phone-line"></i>
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-map-pin-line text-primary ri-lg"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-800">Reservasi & Pemesanan</h4>
-                                <p class="text-gray-600">Silakan hubungi kami melalui WhatsApp untuk pemesanan dan informasi lebih lanjut</p>
+                                <h4 class="font-semibold text-gray-900 mb-1">Alamat</h4>
+                                <p class="text-gray-600">Jl. Merdeka No. 123, Palembang<br>Sumatera Selatan 30126</p>
                             </div>
                         </div>
                         
-                        <div class="flex space-x-4 pt-4">
-                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="ri-time-line text-primary ri-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Jam Operasional</h4>
+                                <p class="text-gray-600">Senin - Sabtu: 08:00 - 20:00<br>Minggu: 09:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-gray-900 mb-4">Ikuti Kami</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
                                 <i class="ri-instagram-line"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                <i class="ri-facebook-line"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-all">
-                                <i class="ri-twitter-x-line"></i>
+                            <a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="ri-whatsapp-line"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="glass-card rounded-lg overflow-hidden shadow-lg h-[400px] relative">
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');">
-                    </div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <a href="https://maps.google.com" target="_blank" class="bg-white/90 px-6 py-3 rounded-button font-semibold text-primary hover:bg-white transition-all whitespace-nowrap flex items-center gap-2">
-                            <i class="ri-map-2-line"></i>
-                            Buka di Google Maps
-                        </a>
+                <div data-aos="fade-left">
+                    <div class="glass rounded-2xl p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Lokasi Kami</h3>
+                        <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden">
+                            <div class="w-full h-full bg-center bg-cover" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')"></div>
+                        </div>
+                        <p class="text-gray-600 mt-4 text-center">
+                            Kunjungi toko kami untuk melihat langsung proses pembuatan kerupuk kemplang
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16 px-6">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">logo</a>
-                    <p class="text-gray-400 mb-6">Menyajikan makanan Indonesia autentik dengan cita rasa yang tidak terlupakan sejak 2010.</p>
-                    
+                    <div class="font-['Pacifico'] text-2xl text-primary mb-4">Pak Harun</div>
+                    <p class="text-gray-400 mb-4">
+                        Kerupuk kemplang tradisional terbaik di Palembang sejak 1985
+                    </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-all">
-                            <i class="ri-instagram-line"></i>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-all">
-                            <i class="ri-facebook-line"></i>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="ri-instagram-line ri-lg"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-all">
-                            <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-all">
-                            <i class="ri-youtube-line"></i>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="ri-whatsapp-line ri-lg"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-6">Link Cepat</h3>
-                    <ul class="space-y-4">
-                        <li><a href="#home" class="text-gray-400 hover:text-primary transition-colors">Beranda</a></li>
-                        <li><a href="#menu" class="text-gray-400 hover:text-primary transition-colors">Menu</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-primary transition-colors">Tentang Kami</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Kontak</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Karir</a></li>
+                    <h4 class="font-semibold mb-4">Menu</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#tentang" class="text-gray-400 hover:text-primary transition-colors">Tentang Kami</a></li>
+                        <li><a href="#harga" class="text-gray-400 hover:text-primary transition-colors">Harga</a></li>
+                        <li><a href="#kontak" class="text-gray-400 hover:text-primary transition-colors">Kontak</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-6">Layanan</h3>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Pesan Antar</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Reservasi</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Katering</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Acara Khusus</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Kelas Memasak</a></li>
+                    <h4 class="font-semibold mb-4">Produk</h4>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400">Paket Kecil 250g</span></li>
+                        <li><span class="text-gray-400">Paket Sedang 500g</span></li>
+                        <li><span class="text-gray-400">Paket Besar 1kg</span></li>
+                        <li><span class="text-gray-400">Paket Custom</span></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-6">Berlangganan</h3>
-                    <p class="text-gray-400 mb-4">Dapatkan informasi terbaru dan penawaran spesial dari kami.</p>
-                    
-                    <div class="flex mb-4">
-                        <input type="email" placeholder="Alamat email Anda" class="px-4 py-3 bg-gray-800 border-none rounded-l focus:outline-none focus:ring-1 focus:ring-primary w-full">
-                        <button class="bg-primary px-4 py-3 rounded-r text-white font-semibold whitespace-nowrap">
-                            Langganan
-                        </button>
-                    </div>
-                    
-                    <p class="text-gray-400 text-sm">Kami menerima pembayaran melalui:</p>
-                    <div class="flex space-x-3 mt-3">
-                        <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded">
-                            <i class="ri-visa-fill text-xl"></i>
-                        </div>
-                        <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded">
-                            <i class="ri-mastercard-fill text-xl"></i>
-                        </div>
-                        <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded">
-                            <i class="ri-paypal-fill text-xl"></i>
-                        </div>
-                        <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded">
-                            <i class="ri-alipay-fill text-xl"></i>
-                        </div>
-                    </div>
+                    <h4 class="font-semibold mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Jl. Merdeka No. 123</li>
+                        <li>Palembang, Sumsel</li>
+                        <li>+62 812-3456-7890</li>
+                        <li>kerupukpakharun@gmail.com</li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Kuliner Nusantara. Hak Cipta Dilindungi.</p>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Kerupuk Kemplang Pak Harun. Semua hak dilindungi.</p>
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20pesan.%20Apakah%20masih%20ada?" class="fixed bottom-6 right-6 w-14 h-14 flex items-center justify-center bg-green-500 text-white rounded-full shadow-lg z-50 hover:bg-green-600 transition-all">
-        <i class="ri-whatsapp-line text-2xl"></i>
-    </a>
-    
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 right-24 w-12 h-12 flex items-center justify-center glass-card text-primary rounded-full shadow-lg z-50 opacity-0 invisible transition-all">
-        <i class="ri-arrow-up-line text-xl"></i>
-    </button>
-    
-    <!-- Scripts -->
-    <script id="menu-slider-script">
+    <script id="mobile-menu-script">
         document.addEventListener('DOMContentLoaded', function() {
-            const slider = document.querySelector('.menu-slider');
-            const prevButton = document.getElementById('prev-slide');
-            const nextButton = document.getElementById('next-slide');
-            const slideWidth = 324; // card width (300px) + gap (24px)
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
             
-            prevButton.addEventListener('click', function() {
-                slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
             });
             
-            nextButton.addEventListener('click', function() {
-                slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
-            });
-        });
-    </script>
-    
-    <script id="video-player-script">
-        document.addEventListener('DOMContentLoaded', function() {
-            const playButton = document.querySelector('.play-button');
-            const videoContainer = document.querySelector('.video-container');
-            
-            playButton.addEventListener('click', function() {
-                const img = videoContainer.querySelector('img');
-                const videoElement = document.createElement('video');
-                videoElement.classList.add('w-full', 'h-auto');
-                videoElement.controls = true;
-                videoElement.autoplay = true;
-                
-                // Replace this with your actual video source
-                videoElement.innerHTML = `
-                    <source src="https://example.com/your-video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                `;
-                
-                videoContainer.replaceChild(videoElement, img);
-                playButton.remove();
-            });
-        });
-    </script>
-    
-    <script id="back-to-top-script">
-        document.addEventListener('DOMContentLoaded', function() {
-            const backToTopButton = document.getElementById('back-to-top');
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.remove('opacity-0', 'invisible');
-                    backToTopButton.classList.add('opacity-100', 'visible');
-                } else {
-                    backToTopButton.classList.remove('opacity-100', 'visible');
-                    backToTopButton.classList.add('opacity-0', 'invisible');
-                }
-            });
-            
-            backToTopButton.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
+            // Close mobile menu when clicking on links
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
                 });
             });
         });
     </script>
+
+    <script id="smooth-scroll-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="whatsapp-integration-script">
+        function pesanSekarang() {
+            const message = encodeURIComponent('Halo Pak Harun, saya tertarik untuk memesan kerupuk kemplang. Bisa tolong berikan informasi lebih lanjut?');
+            const phoneNumber = '6281234567890';
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+        
+        function pesanProduk(paket, harga) {
+            const message = encodeURIComponent(`Halo Pak Harun, saya ingin memesan ${paket} seharga Rp ${harga}. Mohon konfirmasi ketersediaan dan cara pembayarannya. Terima kasih!`);
+            const phoneNumber = '6281234567890';
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+    </script>
+
+    <script id="aos-init-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+
 </body>
 </html>
