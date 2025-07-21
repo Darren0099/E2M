@@ -61,8 +61,6 @@
         html {
             scroll-behavior: smooth;
         }
-
-        
         
         .nav-link {
             transition: all 0.3s ease;
@@ -91,44 +89,6 @@
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-          #mobile-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100%;
-        z-index: 1000; /* Pastikan menu muncul di atas konten lain */
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    
-    #mobile-menu.hidden {
-        display: none;
-    }
-    
-    #mobile-menu > div {
-        display: flex;
-        flex-direction: column;
-        padding: 0.5rem 1rem;
-    }
-    
-    #mobile-menu a {
-        padding: 0.75rem 1rem;
-        margin: 0.25rem 0;
-        border-radius: 0.375rem;
-        transition: all 0.3s ease;
-    }
-    
-    #mobile-menu a:hover {
-        background-color: rgba(245, 158, 11, 0.1);
-    }
-    
-    /* Pastikan tombol menu bisa diklik */
-    #mobile-menu-btn {
-        cursor: pointer;
-        z-index: 1001;
-    }
     </style>
 </head>
 <body class="bg-gradient-to-br from-orange-50 to-yellow-50">
@@ -161,12 +121,12 @@
         </div>
         
         <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden hidden glass w-full">
-            <div class="space-y-1">
-                <a href="#home" class="block text-gray-800 font-medium nav-link">Home</a>
-                <a href="#tentang" class="block text-gray-800 font-medium nav-link">Tentang Kami</a>
-                <a href="#harga" class="block text-gray-800 font-medium nav-link">Harga</a>
-                <a href="#kontak" class="block text-gray-800 font-medium nav-link">Kontak</a>
+        <div id="mobile-menu" class="md:hidden hidden glass">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-800 font-medium nav-link">Home</a>
+                <a href="#tentang" class="block px-3 py-2 text-gray-800 font-medium nav-link">Tentang Kami</a>
+                <a href="#harga" class="block px-3 py-2 text-gray-800 font-medium nav-link">Harga</a>
+                <a href="#kontak" class="block px-3 py-2 text-gray-800 font-medium nav-link">Kontak</a>
             </div>
         </div>
     </nav>
@@ -510,7 +470,7 @@
                 <div>
                     <h4 class="font-semibold mb-4">Kontak</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li>Jalan Tanjung Bubuk, Perum Griya Bintang Mulia Blok Seruni No. 50 Kec. Bukit Baru, Kel. Ilir Barat I</li>
+                        <li>Jl. Merdeka No. 123</li>
                         <li>Palembang, Sumsel</li>
                         <li>+62 812-3456-7890</li>
                         <li>kerupukpakharun@gmail.com</li>
@@ -526,17 +486,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script id="mobile-menu-script">
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', function(e) {
-                e.stopPropagation(); // Mencegah event bubbling
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
-                
-                // Debugging: Cek apakah class 'hidden' berubah
-                console.log('Menu hidden state:', mobileMenu.classList.contains('hidden'));
             });
             
             // Close mobile menu when clicking on links
@@ -546,18 +501,8 @@
                     mobileMenu.classList.add('hidden');
                 });
             });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        } else {
-            console.error('Elements not found:', {mobileMenuBtn, mobileMenu});
-        }
-    });
-</script>
+        });
+    </script>
 
     <script id="smooth-scroll-script">
         document.addEventListener('DOMContentLoaded', function() {
