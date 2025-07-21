@@ -62,10 +62,7 @@
             scroll-behavior: smooth;
         }
 
-         nav {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
+        
         
         .nav-link {
             transition: all 0.3s ease;
@@ -94,28 +91,43 @@
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        #mobile-menu {
+          #mobile-menu {
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         width: 100%;
-        overflow: hidden;
+        z-index: 1000; /* Pastikan menu muncul di atas konten lain */
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    #mobile-menu.hidden {
+        display: none;
     }
     
     #mobile-menu > div {
         display: flex;
         flex-direction: column;
-        padding: 0.5rem 0;
+        padding: 0.5rem 1rem;
     }
     
     #mobile-menu a {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
         padding: 0.75rem 1rem;
-        margin: 0 0.5rem;
+        margin: 0.25rem 0;
         border-radius: 0.375rem;
+        transition: all 0.3s ease;
+    }
+    
+    #mobile-menu a:hover {
+        background-color: rgba(245, 158, 11, 0.1);
+    }
+    
+    /* Pastikan tombol menu bisa diklik */
+    #mobile-menu-btn {
+        cursor: pointer;
+        z-index: 1001;
     }
     </style>
 </head>
@@ -514,12 +526,17 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script id="mobile-menu-script">
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            mobileMenuBtn.addEventListener('click', function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation(); // Mencegah event bubbling
                 mobileMenu.classList.toggle('hidden');
+                
+                // Debugging: Cek apakah class 'hidden' berubah
+                console.log('Menu hidden state:', mobileMenu.classList.contains('hidden'));
             });
             
             // Close mobile menu when clicking on links
@@ -529,8 +546,18 @@
                     mobileMenu.classList.add('hidden');
                 });
             });
-        });
-    </script>
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        } else {
+            console.error('Elements not found:', {mobileMenuBtn, mobileMenu});
+        }
+    });
+</script>
 
     <script id="smooth-scroll-script">
         document.addEventListener('DOMContentLoaded', function() {
